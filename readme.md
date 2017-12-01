@@ -15,7 +15,7 @@ So, first recompile Open CV with Visual Studio 2017.
 Compile it static (`BUILD_SHARED_LIBS=OFF`).
 Then compile this library, you will need to edit the "Runtime Library" in the "Code Generation Option" of the project to `Multi-threaded (/MT)` instead of the default `Multi-threaded DLL (/MD)` to avoid linking errors with OpenCV.
 
-## Android on Windows
+## Android
 
 You need Android SDK and NDK, CMake, OpenCV for Android (pre-built package or source, see below).
 
