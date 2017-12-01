@@ -39,3 +39,13 @@ Set the variable `ANDROID_STL` to `c++_static`.
 Configure and generate, and in a command line in the build directory, call the ninja provided by the CMake from the SDK.
 
 Then, compile `librectify` as above, but also set the variable `ANDROID_STL` to `c++_static`, otherwise you'll have linking problems.
+
+### Reducing the size of the resulting library
+
+This library hides imported static libraries in an attempt to allow link time size optimisation. Two steps allow to reduce the size of the resulting library:
+1. It seems that by default OpenCV imports global symbols from flann. To avoid that, if you do not use flann in your project, recompile OpenCV without flann support.
+1. Manually strip the resulting library:
+${NDK_PATH}/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin/arm-linux-androideabi-strip
+-s src/librectify.so
+
+
