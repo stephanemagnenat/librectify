@@ -1,4 +1,4 @@
-This is a C++14 plugin doing rectification for Augmented Creativity apps.
+This is a C++14 plugin doing rectification for rectifying images captured by Vuforia in Unity. 
 
 # Dependencies
 
