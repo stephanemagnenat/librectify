@@ -11,8 +11,6 @@
 #endif
 
 #include <opencv2/opencv.hpp>
-#include <cstdio>
-#include <unistd.h>
 
 extern "C"
 {
@@ -89,12 +87,6 @@ extern "C"
 		cv::Mat cameraImageBGRA;
 		cv::cvtColor(cameraImage, cameraImageBGRA, cv::COLOR_GRAY2BGRA);
 		cv::Mat warpedImage(outHeight, outWidth, CV_8UC4, outPixels);
-		
-		/*
-		// dump input parameters to a file
-		freopen("/tmp/plugindebug.txt", "a", stdout);
-		printf("%p %d %d %p %p %d %d\n", inPixels, inWidth, inHeight, targetCoordinates, outPixels, outWidth, outHeight);
-		fflush(stdout);*/
 		
 		rectifyMats(cameraImageBGRA, targetCoordinates, warpedImage);
 	}
