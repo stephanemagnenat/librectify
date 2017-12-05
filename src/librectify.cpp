@@ -27,7 +27,7 @@ extern "C"
 		const auto inHeight(inMat.size().height);
 		cv::Point2f srcPoints[4];
 		for (size_t i = 0; i < 4; ++i)
-			srcPoints[i] = { targetCoordinates->x[i], inHeight - targetCoordinates->y[i] - 1};
+			srcPoints[i] = { targetCoordinates->x[i], targetCoordinates->y[i] };
 		const float outHeightF(outMat.size().height);
 		const float outWidthF(outMat.size().width);
 		const cv::Point2f dstPoints[4] = { {0, 0}, {0, outHeightF}, {outWidthF, outHeightF}, {outWidthF, 0} };
