@@ -15,6 +15,15 @@ So, first recompile Open CV with Visual Studio 2017.
 Compile it static (`BUILD_SHARED_LIBS=OFF`).
 Then compile this library, you will need to edit the "Runtime Library" in the "Code Generation Option" of the project to `Multi-threaded (/MT)` instead of the default `Multi-threaded DLL (/MD)` to avoid linking errors with OpenCV.
 
+## Mac OS
+
+You need a working C++ compilation environment and CMake.
+
+If you want a portable plugin, first recompile `OpenCV` as static (`BUILD_SHARED_LIBS=OFF`).
+Only modules `core` and `imgproc` are required, so you can skip others to save time.
+Then, you can configure `librectify` by specifying `OpenCV_DIR`, the directory where the generate `OpenCVConfig.cmake` was compiled or installed to.
+You can select either the `make` or the `Xcode` generator.
+
 ## Android
 
 You need Android SDK and NDK, CMake, OpenCV for Android (pre-built package or source, see below).
