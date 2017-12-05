@@ -6,8 +6,8 @@ else ()
 	add_library(rectify SHARED ${SRCS})
 endif ()
 
-if (UNIX)
-	message(STATUS "Unix detected, performing link-time optimisation")
+if (LINUX)
+	message(STATUS "Linux detected, performing link-time optimisation")
 	set_target_properties(rectify PROPERTIES LINK_FLAGS "-Wl,--exclude-libs,ALL -Wl,--gc-sections -Wl")
 endif()
 
