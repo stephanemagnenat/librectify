@@ -37,6 +37,9 @@ Select the `Ninja` binary from the SDK CMake installation (typically in `SDK_LOC
 Set `OpenCV_DIR` to the location of `OpenCVConfig.cmake` in the OpenCV Android kit (typically `OpenCV-android-sdk\sdk\native\jni`).
 Configure and generate, and in a command line in the build directory, call the ninja provided by the CMake from the SDK.
 
+The Android toolchain documentation is available at https://developer.android.com/ndk/guides/cmake.
+In particular, if you want to target another architecture, such as arm64, you need to adapt the `ANDROID_ABI` variable (e.g. value ` arm64-v8a` for arm64).
+
 ### Recompiling OpenCV with modern C++ support
 
 The OpenCV kit is linked with a very old version of libstdc++, so if you wish to use modern C++ you need to recompile it with the `c++_static` STL.
